@@ -27,12 +27,11 @@ before_build:
   - cmd: cmake -G "Visual Studio 12 2013 Win64" -DCMAKE_BUILD_TYPE:STRING=Release -DBUILD_TESTING:BOOL=OFF -DITK_DIR:PATH=C:\ITK-install\lib\cmake\ITK-4.10 -DCMAKE_INSTALL_PREFIX=c:\SlicerExecutionModel\SlicerExecutionModel-install C:\SlicerExecutionModel
 build_script:
   - cmd: msbuild SlicerExecutionModel.sln /m
-  - cmd: msbuild INSTALL.vcxproj /m
 cache:
   - C:\ProgramData\chocolatey\bin
   - C:\ProgramData\chocolatey\lib
 artifacts:
-  - path: SlicerExecutionModel-install
+  - path: SlicerExecutionModel-build
     name: SlicerExecutionModel-dcmqi
     type: zip
 deploy:
